@@ -24,8 +24,6 @@ class LogisticRegressionModel(torch.nn.Module):
             for (x_batch, y_batch) in test_loader:
                 x_batch, y_batch = x_batch.to(device), y_batch.to(device)
 
-                logits = self(x_batch)
-
                 probabilities = torch.sigmoid(x_batch)
 
                 predictions = (probabilities >= 0.5).float()
